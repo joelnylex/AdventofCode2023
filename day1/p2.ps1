@@ -1,0 +1,1 @@
+﻿Get-Content $PSScriptRoot\input.txt | ForEach-Object{ $_ -replace "one","o1e" -replace "two","t2o" -replace "three","t3e"-replace "four","f4r" -replace "five","f5e" -replace "six","s6x" -replace "seven","s7n" -replace "eight","e8t" -replace "nine","n9e" -replace "[^0-9]","" } | ForEach-Object{  $_.Substring(0,1) + $_.Substring($_.length-1,1) } | Measure-Object -Sum
